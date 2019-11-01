@@ -1,0 +1,23 @@
+{
+  "name": "max-rnn",
+  "version": "1.0.0",
+  "description": "An implementation of note sequence continuation in Max 8 using a Recurrent Neural Network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cooperbarth/max-rnn.git"
+  },
+  "author": "Cooper Barth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cooperbarth/max-rnn/issues"
+  },
+  "homepage": "https://github.com/cooperbarth/max-rnn#readme",
+  "dependencies": {
+    "@magenta/music": "1.11.3",
+    "node": "12.13.0"
+  }
+}
