@@ -6,25 +6,22 @@ const samples = require("./samples");
 maxAPI.post("Node.js Process Running", maxAPI.POST_LEVELS.INFO);
 
 maxAPI.addHandlers({
+    getSongNames: () => {
+        maxAPI.outlet(Object.values(samples).map(song => song.name));
+    },
     generateSequence: (songTitle, stepCount=10) => {
         if (!(songTitle in samples)) {
-            maxAPI.post("Song not found.", maxAPI.POST_LEVELS.ERROR);
+            maxAPI.post(`Song ${songTitle !== "song" ? songTitle : "UNDEFINED"} not found.`, maxAPI.POST_LEVELS.ERROR);
         }
         if (stepCount <= 0) {
             maxAPI.post("Invalid step count - must be greater than 0.", maxAPI.POST_LEVELS.ERROR);
         }
         const sequence = samples[songTitle];
         model.continue(sequence, stepCount, continuedSequence => {
-            maxAPI.post(convert.toNotes(sequence));
-            maxAPI.post(convert.toNotes(continuedSequence));
+            const fullSequence = sequence.notes.concat(continuedSequence.notes);
+            durations = convert.toDurations(fullSequence);
+            notes = convert.toNotes(fullSequence);
+            maxAPI.outlet(durations.concat(notes));
         });
-        /* model.continue(convert.toSequence(notes), steps, continuedSequence => {
-            maxAPI.post(convert.toNotes(continuedSequence));
-        }); */
-    },
+    }
 });
-
-/* const songTitle = "TWINKLE_TWINKLE";
-model.continue(samples[songTitle], DEFAULT_STEPS, continuedSequence => {
-    console.log(continuedSequence.notes);
-}); */
