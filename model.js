@@ -12,10 +12,11 @@ globalAny.fetch = require('node-fetch');
 function continueSequence(noteSequence, stepCount, callback) {
     const quantizedSequence = core.sequences.quantizeNoteSequence(noteSequence, 4);
     musicRNN.initialize();
-    musicRNN.continueSequence(quantizedSequence, stepCount, RNN_TEMPERATURE, sample => {
-        const notes = core.sequences.unquantizeSequence(sample);
-        callback(notes);
-    });
+    musicRNN.continueSequence(quantizedSequence, stepCount, temperature=RNN_TEMPERATURE)
+        .then(sample => {
+            const notes = core.sequences.unquantizeSequence(sample);
+            callback(notes);
+        });
 }
 
 module.exports = {
