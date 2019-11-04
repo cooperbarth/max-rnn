@@ -752,18 +752,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-16",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 553.0, 623.0, 150.0, 33.0 ],
-					"text" : "- Separate into different patchers"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-69",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -902,6 +890,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -1017,6 +1007,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
