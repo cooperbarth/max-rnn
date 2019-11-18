@@ -7,6 +7,9 @@ const model = require("./model");
 let notes = [];
 let timings = [];
 
+MAX_LENGTH = 90;
+MIN_LENGTH = 45;
+
 maxAPI.addHandlers({
     addNote: note => {
         notes.push(note);
@@ -33,7 +36,7 @@ maxAPI.addHandlers({
     },
     generateSequence: () => {
         const sequence = convert.toSequence(notes, timings);
-        const stepCount = Math.min(75, sequence.notes.length * 6);
+        const stepCount = Math.min(MAX_LENGTH, Math.max(MIN_LENGTH, sequence.notes.length * 6));
         notes = [];
         timings = [];
         model.continue(sequence, stepCount, continuedSequence => {
