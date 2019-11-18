@@ -9,7 +9,7 @@ const globalAny = global;
 globalAny.performance = Date;
 globalAny.fetch = require('node-fetch');
 
-module.exports.continue = (noteSequence, stepCount, callback) => {
+function continueSequence(noteSequence, stepCount, callback) {
     const quantizedSequence = core.sequences.quantizeNoteSequence(noteSequence, 4);
     musicRNN.initialize();
     musicRNN.continueSequence(quantizedSequence, stepCount, temperature=RNN_TEMPERATURE)
@@ -18,3 +18,7 @@ module.exports.continue = (noteSequence, stepCount, callback) => {
             callback(notes);
         });
 }
+
+module.exports = {
+    continue: continueSequence
+};
