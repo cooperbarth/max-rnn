@@ -33,13 +33,12 @@ maxAPI.addHandlers({
     },
     generateSequence: () => {
         const sequence = convert.toSequence(notes, timings);
-        const stepCount = sequence.notes.length * 6;
+        const stepCount = Math.min(75, sequence.notes.length * 6);
         notes = [];
         timings = [];
         model.continue(sequence, stepCount, continuedSequence => {
             durations = convert.toDurations(continuedSequence.notes);
             notes = convert.toNotes(continuedSequence.notes);
-            maxAPI.post(durations.concat(notes));
             maxAPI.outlet(durations.concat(notes));
         });
     }
