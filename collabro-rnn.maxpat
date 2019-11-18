@@ -39,6 +39,21 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-178",
+					"linecount" : 6,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 481.25, 219.944444444444343, 161.5, 87.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 6,
+					"presentation_rect" : [ 678.25, 177.5, 161.5, 87.0 ],
+					"text" : "1. Play notes using the number keys\n2. Hit enter to have the model generate a sequence\n3. Wait and listen\n4. Repeat"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-176",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -271,7 +286,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 307.5, 673.944444444444343, 50.0, 22.0 ],
-					"text" : "0.125"
+					"text" : "0.25"
 				}
 
 			}
@@ -579,7 +594,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 466.0, 577.944444444444343, 50.0, 22.0 ],
-					"text" : "62"
+					"text" : "66"
 				}
 
 			}
@@ -615,7 +630,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 546.0, 505.944444444444343, 29.5, 22.0 ],
-					"text" : "62"
+					"text" : "66"
 				}
 
 			}
@@ -687,7 +702,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 299.0, 437.944444444444343, 29.5, 22.0 ],
-					"text" : "40"
+					"text" : "38"
 				}
 
 			}
@@ -723,7 +738,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 488.0, 438.944444444444343, 29.5, 22.0 ],
-					"text" : "40"
+					"text" : "38"
 				}
 
 			}
@@ -1544,8 +1559,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1236.0, 408.055555555555657, 246.0, 33.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 1236.0, 408.055555555555657, 246.0, 33.0 ],
 					"text" : "Creating Sick Beats..."
 				}
 
