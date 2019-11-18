@@ -19,14 +19,15 @@ function toSequence(notes, timings) {
     for (let i = 0; i < N; i++) {
         sequenceNotes.push({
             pitch: notes[i],
-            startTime = currentTime,
-            endTime = currentTime + timings[i]
+            startTime: currentTime,
+            endTime: currentTime + timings[i]
         });
         currentTime += timings[i];
     }
 
     return {
-        notes: sequenceNotes
+        notes: sequenceNotes,
+        totalTime: currentTime
     };
 }
 

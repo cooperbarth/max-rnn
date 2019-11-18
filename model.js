@@ -10,6 +10,7 @@ globalAny.performance = Date;
 globalAny.fetch = require('node-fetch');
 
 module.exports.continue = (noteSequence, stepCount, callback) => {
+    const maxAPI = require("max-api");
     const quantizedSequence = core.sequences.quantizeNoteSequence(noteSequence, 4);
     musicRNN.initialize();
     musicRNN.continueSequence(quantizedSequence, stepCount, temperature=RNN_TEMPERATURE)
